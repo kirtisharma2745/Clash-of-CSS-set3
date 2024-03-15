@@ -6,23 +6,196 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="conatiner">
-    <div id="circle"></div>
-<div class=""></div></div>
+    <div class="container">
+        <div class="head">
+          <div class="glare"></div>
+        </div>
+        <div class="main">
+          <div class="neck"></div>
+          <div class="shoulders"></div>
+          <div class="torso">
+            <div class="torso-glare"></div>
+          </div>
+          <div class="waist"></div>
+          <div class="hips"></div>
+          <div class="legs">
+            <div class="legs-glare"></div>
+          </div>
+          <div class="feet"></div>
+        </div>
+      </div>
     <style>
-        .container{
-            display: flex;
-            flex-direction:column;
-            align-items:center;
-        justify-content: center;
-            
-        }
-        #circle{
-            height:100px;
-            width: 100px;
-            border-radius:50%;
-            background-color:rgb(210, 153, 31);
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
+
+body{
+  margin:0;
+  padding:0;
+  background:#f1d874;
+}
+
+h1{
+  font-family:'Heebo', Arial;
+  opacity:1;
+  position:absolute;
+  display:inline;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  color:#9e936a;
+}
+
+.container{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transition:1s;
+}
+
+/* .container:hover{
+  transform-origin:center left;
+  transform:rotate(-90deg);
+} */
+
+.head {
+  height:100px;
+  width:100px;
+  background-color:rgb(212, 113, 14);
+  display:flex;
+  position:relative;
+  border-radius:50%;
+}
+
+.glare{
+  height:20px;
+  width:10px;
+  background-color:#f7fecf;
+  position:absolute;
+  right:20px;
+  top:20px;
+  transform:rotate(-30deg);
+  border-radius:50%;
+}
+
+.main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.neck{
+  height:15px;
+  width:50px;
+  background-color:rgb(212, 113, 14);
+  border-radius:10px;
+  border:3px solid transparent;
+  margin-top:3px;
+  margin-bottom:3px;
+}
+
+.shoulders {
+  height:20px;
+  width:120px;
+  background-color:rgb(212, 113, 14);
+  border-top-left-radius:25px;
+  border-top-right-radius:25px;
+  margin-bottom:3px;
+}
+
+.torso{
+  width:100px;
+  height:140px;
+  background-color:rgb(212, 113, 14);
+  position:relative;
+}
+
+.torso-glare{
+  position:absolute;
+  background-color:#fefff5;
+  border-radius:50%;
+  width:5px;
+  height:90px;
+  top:30px;
+  left:80%;
+  transform:rotate(-10deg);
+  
+}
+
+.torso::before{
+  content:'';
+  display:block;
+  height:150px;
+  width:50px;
+  background-color:#f1d874;
+  border-radius:20px;
+  position:absolute;
+  transform:rotate(10deg);
+  left:-40%;
+  top:-1%;
+}
+
+.torso::after{
+  content:'';
+  display:block;
+  height:150px;
+  width:50px;
+  background-color:#f1d874;
+  border-radius:20px;
+  position:absolute;
+  transform:rotate(-10deg);
+  right:-40%;
+  top:-1%;
+}
+
+.waist{
+  height:15px;
+  width:140px;
+  background-color:rgb(250, 243, 243);
+  z-index:2;
+  border-radius:20px;
+  margin-top:3px;
+  margin-bottom:3px;
+}
+
+.hips{
+  height:10px;
+  width:100px;
+  background-color:rgb(212, 113, 14);
+  position:relative;
+}
+
+.legs{
+  background-color:rgb(212, 113, 14);
+  width:180px;
+  height:60px;
+  border-top-right-radius:40px;
+  border-top-left-radius:40px;
+  position:relative;
+}
+
+.legs-glare{
+  position:absolute;
+  background-color:#f7fecf;
+  border-radius:50%;
+  width:5px;
+  height:25px;
+  top:10px;
+  left:87%;
+  transform:rotate(-45deg);
+}
+
+.feet{
+  width:200px;
+  height:15px;
+  background-color:rgb(212, 113, 14);
+  border-radius:20px;
+  margin-top:3px;
+}  
     </style>
 </body>
 </html>
